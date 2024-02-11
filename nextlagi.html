@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>penutup?</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .card img, .card h1 {
+            transition: transform 0.5s;
+        }
+        .card img.out-right, .card h1.out-right {
+            transform: translateX(100%);
+        }
+        .card img.out-left, .card h1.out-left {
+            transform: translateX(-100%);
+        }
+        .card img.in-right, .card h1.in-right {
+            transform: translateX(-100%);
+        }
+        .card img.in-left, .card h1.in-left {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img id="albumArt" src="source/IMG_20240211_230533_084.jpg" alt="Album Art">
+            <h1 id="title">Haloooo</h1>
+            <div style="margin-top: 2rem; margin-bottom: 2rem;">
+                <button onclick="skipBackward()"><i class="fa fa-step-backward"></i></button>
+                <button onclick="skipForward()"><i class="fa fa-step-forward ml-3"></i></button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const albumArt = document.getElementById('albumArt');
+        const title = document.getElementById('title');
+        const images = [
+            'source/IMG_20240211_230533_084.jpg',
+            'source/IMG_20240211_230242_351.jpg',
+            'source/IMG_20240211_230243_130.jpg',
+            'source/IMG_20240211_230318_109.jpg',
+            'source/IMG_20240211_230415_327.jpg',
+            'source/IMG_20240211_230457_065.jpg',
+            'source/IMG_20240211_230433_732.jpg',
+            'source/wajawfj.jpg',
+            'source/ijiuiun.jpg',
+            'source/IMG_20240211_230528_731.jpg',
+            'source/IMG_20240211_230543_206.jpg',
+            'source/IMG_20240211_230533_084.jpg',
+            'source/IMG_20240211_230546_143.jpg',
+
+        ];
+        const titles = [
+            'Haloooo',
+            'Ini akuuu',
+            'Ojan ganteng',
+            'Akuuu buat ini rada sambil bergadang hehe',
+            'Btww Happy Birth Dayy yaaahh',
+            'Maaf kalooo hadiah hadiah akuuu ngebosenin',
+            'Pokoknya Happy Sweets 17 sayanggg',
+            'Semoga kamu bisa mencapai cita cita kamu, dan juga kita terus barengg yaa',
+            'Selaluu sehatt dan doa nya di ijabah Allah swt. Aamiin',
+            'Btww Gimanaa webnyaa??',
+            'Semoga kamu sukaa yaa',
+            'Sekiann darii akuu yaaa',
+            'Sampai ketemu di real lifee',
+        ];
+        let currentIndex = 0;
+
+        function skipBackward() {
+            changeImageAndText('backward');
+        }
+
+        function skipForward() {
+            changeImageAndText('forward');
+        }
+
+        function changeImageAndText(direction) {
+            albumArt.classList.add(`out-${direction}`);
+            title.classList.add(`out-${direction}`);
+            setTimeout(() => {
+                currentIndex = (currentIndex + (direction === 'forward' ? 1 : -1) + images.length) % images.length;
+                albumArt.src = images[currentIndex];
+                title.innerText = titles[currentIndex];
+                albumArt.classList.remove(`out-${direction}`);
+                title.classList.remove(`out-${direction}`);
+                albumArt.classList.add(`in-${direction}`);
+                title.classList.add(`in-${direction}`);
+                setTimeout(() => {
+                    albumArt.classList.remove(`in-${direction}`);
+                    title.classList.remove(`in-${direction}`);
+                }, 500);
+            }, 500);
+        }
+    </script>
+</body>
+</html>

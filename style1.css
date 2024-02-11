@@ -1,0 +1,45 @@
+
+body {
+    background-color: #000000; /* This is black color */
+    color: #FFFFFF; /* This is white color */
+        background-image: url('https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX38269708.jpg');
+        font-family: 'Josefin Sans', sans-serif;
+}
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8); /* This is white color with some transparency */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+.card h1 {
+    font-size: 1.5em;
+}
+.card input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.tombol{
+    padding: 10px 20px;
+    margin-top: 2px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.card button {
+    padding: 10px 20px;
+    margin-bottom: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.card button:hover {
+    background-color: #45a049;
+}

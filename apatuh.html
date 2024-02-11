@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apatuhhh mann??</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>My present for you</h3>
+            <h1>Sempurna</h1>
+            <img src="source/WhatsApp Image 2024-02-06 at 20.29.57_ac73bf2e.jpg" alt="Album Art">
+            <audio id="audio" controls>
+                <source src="source/sempurna.mp3" type="audio/mpeg">
+            </audio>
+            <div style="background-color: white; border-radius: 5%; padding: 20px;">
+                <div id="lyrics" style="height: 55px; overflow: auto;"></div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <button onclick="skipBackward()"><i class="fa fa-step-backward"></i></button>
+                <button onclick="pauseResume()"><i id="playPauseIcon" class="fa fa-play mx-3"></i></button>
+                <button onclick="skipForward()"><i class="fa fa-step-forward ml-3"></i></button>
+            </div>
+            
+        </div><a class="tombol" href="nextlagi.html"><i class="fa fa-arrow-right mr-3"></i>Kalau sudaa dengerin pencet ini!!</a>
+    </div>
+    <script>
+    window.onload = function() {
+            alert('Selamat datang di Apatuhh!');
+            alert('Mulai dari sini website nya sudah mau habis');
+            alert('Dan mulai dari sini admin yang akan take over yaa');
+            alert('Terimakasihhh buattt kamuuu!!');
+            alert('Next year kitaaa ketemuuu lagiii???');
+            alert('Mungkinn iyaaa!!');
+            alert('Saya akann menampakkan avatar sayaa saat ituu!');
+            alert('Jadi sayaa mohonnn bersama terus dengan adminn yaaa!!');
+            alert('Sampaiii jumpaaa!');
+            alert('Terimaksihhh bott!!');
+            alert('Ini akuuu');
+            alert('Langsung ajaaa yaaa!');
+        }
+    </script>
+    
+    <script>
+        
+
+        const audio = document.getElementById('audio');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const lyrics = document.getElementById('lyrics');
+    
+            const lrc = `
+            [00:04.15]by andra and the backbone
+[00:10.27]Kau begitu sempurna
+[00:13.44]Dimataku kau begitu indah
+[00:18.19]Kau membuat diriku akan s'lalu memujamu
+[00:28.93]Disetiap langkahku
+[00:33.90]Kukan s'lalu memikirkan dirimu
+[00:38.96]Tak bisa kubayangkan hidupku tanpa cintamu
+[00:48.78]Janganlah kau tinggalkan diriku
+[00:52.44]Takkan mampu menghadapi semuaa
+[00:57.44]Hanya bersamamu ku akan bisa
+[01:02.42]Kau adalah darahku
+[01:06.67]Kau adalah jantungku
+[01:11.92]Kau adalah hidupku
+[01:14.68]Lengkapi diriku
+[01:17.68]Oh sayangku, kau begitu
+[01:21.69]Sempurna, Sempurna...
+[01:34.68]Kau genggam tanganku
+[01:39.25]Saat diriku lemah dan terjatuh
+[01:44.17]Kau bisikkan kata dan hapus semua sesalku
+[01:53.69]Janganlah kau tinggalkan diriku
+[01:58.43]Takkan mampu menghadapi semua
+[02:03.67]Hanya bersamamu ku akan bisa
+[02:08.18]Kau adalah darahku
+[02:12.92]Kau adalah jantungku
+[02:17.93]Kau adalah hidupku
+[02:21.43]Lengkapi diriku
+[02:23.68]Oh sayangku, kau begitu
+[02:28.18]Sempurna, Sempurna...
+[02:49.68]Janganlah kau tinggalkan diriku
+[02:55.17]Takkan mampu menghadapi semua
+[02:59.67]Hanya bersamamu ku akan bisa
+[03:04.92]Kau adalah darahku
+[03:09.66]Kau adalah jantungku
+[03:14.68]Kau adalah hidupku
+[03:17.42]Lengkapi diriku
+[03:20.18]Oh sayangku, kau begitu
+[03:24.92]Kau adalah darahku (darahhku)
+[03:29.17]Kau adalah jantungku (jantungku)
+[03:33.93]Kau adalah hidupku (hidupku)
+[03:36.94]Lengkapi diriku
+[03:39.69]Oh sayangku, kau begitu
+[03:44.41]Sayangku, kau begitu
+[03:48.67]Sempurna, Sempurna...
+            `;
+        
+            // Function to parse LRC format
+            function parseLRC(lrc) {
+                const lines = lrc.split('\n');
+                const songLyrics = [];
+        
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    const timeStart = line.indexOf('[');
+                    const timeEnd = line.indexOf(']');
+        
+                    if (timeStart !== -1 && timeEnd !== -1) {
+                        const time = line.substring(timeStart + 1, timeEnd);
+                        const text = line.substring(timeEnd + 1);
+        
+                        const minutes = parseInt(time.split(':')[0]);
+                        const seconds = parseFloat(time.split(':')[1]);
+        
+                        songLyrics.push({ time: minutes * 60 + seconds, text: text.trim() });
+                    }
+                }
+        
+                return songLyrics;
+            }
+        
+            // Parse the LRC lyrics into the songLyrics array
+            const songLyrics = parseLRC(lrc);
+        
+            function skipBackward() {
+                audio.currentTime -= 10; // skip 10 seconds backward
+            }
+        
+            function pauseResume() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseIcon.classList.remove('fa-play');
+                    playPauseIcon.classList.add('fa-pause');
+                } else {
+                    audio.pause();
+                    playPauseIcon.classList.remove('fa-pause');
+                    playPauseIcon.classList.add('fa-play');
+                }
+            }
+        
+            function skipForward() {
+                audio.currentTime += 10; // skip 10 seconds forward
+            }
+        
+            // Function to display lyrics
+            audio.ontimeupdate = function() {
+                for (let i = 0; i < songLyrics.length; i++) {
+                    if (audio.currentTime >= songLyrics[i].time) {
+                        lyrics.innerText = songLyrics[i].text;
+                    }
+                }
+            };
+    </script>
+</body>
+</html>

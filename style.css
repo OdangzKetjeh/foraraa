@@ -1,0 +1,50 @@
+
+body {
+    background-color: #000000; /* This is black color */
+    color: #FFFFFF; /* This is white color */
+    font-family: 'Josefin Sans', sans-serif;
+}
+.jumbotron {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX38269708.jpg');
+    background-size: cover;
+}
+.card {
+    background-color: rgba(0, 0, 0, 0.8); /* This is white color with some transparency */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+.jumbotron h1 {
+    font-size: 2em;
+}
+.jumbotron p {
+    font-size: 1em;
+}
+.jumbotron a {
+    color: #ffffff; /* This is black color */
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ffffff;
+}
+.jumbotron a:hover {
+    background-color: #ffffff;
+    color: #000000; /* This is white color */
+}
+@media (max-width: 600px) {
+    .jumbotron h1 {
+        font-size: 1.5em;
+    }
+    .jumbotron p {
+        font-size: 0.75em;
+    }
+}

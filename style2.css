@@ -1,0 +1,51 @@
+body {
+    background-color: #000000; /* This is black color */
+    color: #000000;
+    background-image: url('https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX38269708.jpg');
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 90%; /* Full width on small screens */
+    padding: 20px;
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.8); /* This is white color with some transparency */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 1.5em;    
+    color: #ffffff;
+}
+.card h3 {
+    font-size: 1.5em;    
+    color: #ffffff;
+}
+.tombol{
+    padding: 10px 20px;
+    margin-top: 7px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.card img{
+    width: 100%; /* Make the image responsive */
+    height: auto;
+}
+
+/* On screens that are 600px or larger, set the width to 60% */
+@media screen and (min-width: 600px) {
+    .card {
+        width: 60%;
+    }
+}
